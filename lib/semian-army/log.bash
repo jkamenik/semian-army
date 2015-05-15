@@ -12,7 +12,7 @@ function log() {
 }
 
 function err() {
-  echo $@ >2
+  echo $@ >&2
 }
 
 function error() {
