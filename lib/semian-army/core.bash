@@ -47,7 +47,10 @@ function get-the-party-started() {
 
     if [ "$COUNT" -ne 0 ]; then
       i=$(( $i + 1 ))
-    else
+    fi
+
+    if [ ${i} -lt "$COUNT" ]; then
+      debug "resting for ${REST_TIME}s"
       sleep $REST_TIME
     fi
   done
