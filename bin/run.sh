@@ -12,6 +12,7 @@ source ${LIB_PATH}/log.bash
 source ${LIB_PATH}/core.bash
 source ${CONF_PATH}/semian-army.conf 2>/dev/null # ignore errors
 source ${LIB_PATH}/usage.bash
+source ${LIB_PATH}/util.bash
 
 debug "loading monkeys"
 source ${LIB_PATH}/monkey.bash
