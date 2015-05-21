@@ -4,6 +4,12 @@
 
 CMD="openssl speed"
 
+function runnable() {
+  # we can only run if openssl exists in the path
+
+  which "openssl"
+}
+
 function uncage() {
   info "uncagging burncpu"
   local cpu=$(cpu-count ; echo $?)
