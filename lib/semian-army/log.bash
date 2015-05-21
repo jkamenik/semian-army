@@ -8,7 +8,7 @@ function log() {
   # date the message
   date=$(date)
 
-  echo "${date} - ${type}: $@"
+  echo "${date} - ${type}: $@" >&2
 }
 
 function err() {
