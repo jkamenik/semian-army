@@ -1,7 +1,12 @@
 # find-all-monkeys
 #  This echos each loaded monkey, plus any that are in the monkey path
 function find-all-monkeys() {
-  find $INT_MONKEY_PATH -name "*.bash" | grep -v "base.bash" || true
+  # all the loaded monkeys
+  for x in "$MONKEYS"; do
+    echo $x
+  done
+
+  # any found monkeys
   find $EXT_MONKEY_PATH -name "*.bash" || true
 }
 
