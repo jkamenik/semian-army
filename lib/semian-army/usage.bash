@@ -10,8 +10,8 @@ function usage() {
   err "  and recages it."
   err
   err "Options:"
-  err " -c <count> The number of iterations to run. 0 for unlimited."
-  err " -L <level> The logging level."
+  err " -c <count> The number of iterations to run. 0 for unlimited. (1)"
+  err " -L <level> The logging level. (2)"
   err " -h         Print this message."
   clear-and-exit 1
 }
