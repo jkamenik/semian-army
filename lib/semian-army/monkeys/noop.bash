@@ -1,6 +1,6 @@
-function runnable() {
-  return 0
-}
+## NOOP Monkey
+##
+## This monkey does nothing
 
 function uncage() {
   debug "uncaging noop"
