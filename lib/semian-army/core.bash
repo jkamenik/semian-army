@@ -26,6 +26,33 @@ function clear-and-exit() {
   exit $1
 }
 
+function add-monkey() {
+  info "attempting to add monkey: $1"
+
+  if [ -z "$1" ]; then
+    err "A monkey is required"
+    return 1
+  fi
+
+  local monkey=$1
+  local dir=$(dirname $monkey)
+  debug "monkey's directory is $dir"
+
+  if [ "$dir" = "." -a ! -f "$monkey" ]; then
+    debug "monkey is likely in the monkey path"
+    monkey="${INT_MONKEY_PATH}/$(basename $monkey).bash"
+    debug "trying $monkey"
+  fi
+
+  if [ ! -f "$monkey" ]; then
+    debug "monkey was not found, skipping"
+    return 1
+  fi
+
+  MONKEYS="$MONKEYS $monkey"
+  debug $MONKEYS
+}
+
 function get-the-party-started() {
   debug "getting the party started"
   check-lock
