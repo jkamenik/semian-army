@@ -1,6 +1,3 @@
-: ${INT_MONKEY_PATH:="${LIB_PATH}/monkeys"}
-: ${EXT_MONKEY_PATH:="/usr/lib/monkey"}
-
 # find-all-monkeys
 #  This echos each loaded monkey, plus any that are in the monkey path
 function find-all-monkeys() {

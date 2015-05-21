@@ -4,6 +4,8 @@
 : ${LOAD_PATH:=""}
 : ${CONF_PATH:="${LOAD_PATH}/etc"}
 : ${LIB_PATH:="${LOAD_PATH}/lib/semian-army"}
+: ${INT_MONKEY_PATH:="${LIB_PATH}/monkeys"}
+: ${EXT_MONKEY_PATH:="/usr/lib/monkey"}
 
 # load
 source ${LIB_PATH}/log.bash
