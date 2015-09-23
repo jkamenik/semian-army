@@ -58,7 +58,15 @@ function get-the-party-started() {
   check-lock
 
   local monkeys=($(find-all-monkeys))
-  debug "Monkeys: ${monkeys[@]}"
+  debug "All Monkeys: ${monkeys[@]}"
+
+  if [ -n "$1" ]; then
+    debug "Asking for monkeys matching $1"
+    monkeys=($(filter-monkeys-by $1 ${monkeys[@]}))
+    debug "Filtered monkeys: ${monkeys[@]}"
+  fi
+
+#  exit 1
 
   local monkey=""
 

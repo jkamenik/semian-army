@@ -19,4 +19,5 @@ source ${LIB_PATH}/monkey.bash
 
 # die on the first error
 set -e
-get-the-party-started
+debug "ARGS: $@"
+get-the-party-started $@

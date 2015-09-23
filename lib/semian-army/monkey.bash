@@ -10,6 +10,19 @@ function find-all-monkeys() {
   find $EXT_MONKEY_PATH -name "*.bash" || true
 }
 
+function filter-monkeys-by() {
+  local pattern=$1
+  shift
+
+  for x in "$@"; do
+    debug "checking $x"
+    if echo $x | grep $pattern 2>&1 >/dev/null; then
+      debug "$x matches $pattern"
+      echo $x
+    fi
+  done
+}
+
 function pick-random() {
   local monkeys=($@)
   local idx=$(( $RANDOM % ${#monkeys[@]} ))
